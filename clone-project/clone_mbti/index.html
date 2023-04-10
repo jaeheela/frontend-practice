@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--settings.json >> emmet.variables >> "lang" : ko 추가하기 -->
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Open Graph -->
+  <!--
+    og:type: 페이지의 유형(E.g, website, video.movie)
+    og:site_name: 속한 사이트의 이름
+    og:title: 페이지의 이름(제목)
+    og:description: 페이지의 간단한 설명
+    og:image: 페이지의 대표 이미지 주소(URL)
+    og:url: 페이지 주소(URL)
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="내숨캐" />
+  <meta property="og:title" content="내 안에 숨어있는 직업캐 찾기!" />
+  <meta property="og:description" content="누구나 찰떡인 직업이 있어요! 내 안에 숨어있는 직업캐를 찾아보세요!" />
+  <meta property="og:image" content="/images/thumbnail.jpg" />
+  <meta property="og:url" content="https://prismatic-monstera-4c9d6a.netlify.app/" />
+  <!-- Twitter Cards -->
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:site" content="내숨캐" />
+  <meta property="twitter:title" content="내 안에 숨어있는 직업캐 찾기!" />
+  <meta property="twitter:description" content="누구나 찰떡인 직업이 있어요! 내 안에 숨어있는 직업캐를 찾아보세요!" />
+  <meta property="twitter:image" content="/images/thumbnail.jpg" />
+  <meta property="twitter:url" content="https://prismatic-monstera-4c9d6a.netlify.app/" />
+
+  <title>내 안에 숨어있는 직업캐 찾기</title>
+  <!-- 웹페이지를 나타내는 아이콘, 웹페이지의 로고 설정하기 -->
+  <!-- 루트 경로에 favicon.ico 파일이 있으면 자동으로 로딩하기 때문에 <link> 를 따로 작성할 필요가 없음 -->
+  <!-- 하지만, favicon.png 파일을 사용하려면 다음과 같이 <link>를 작성하기 -->
+  <!-- favicon.ico : 64 x 64 (px) 또는 32 x 32 또는 16 x 16 -->
+  <!-- favicon.png : 500 x 500 (px) -->
+  <link rel="icon" href="favicon.png">
+  <!-- 각 브라우저의 기본 스타일 초기화 : reset.css cdn >> copy HTML -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
+  <!-- 페이지에서 사용할 Pretendard 폰트 이용 -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/home.css">
+
+  <script defer src="/js/share.js"></script>
+</head>
+<body>
+  <h2 class="page-subtitle">라재희</h2>
+  <h1 class="page-title">
+    내 안에 숨어있는<br> 
+    직업캐 찾기!
+  </h1>
+  <img src="/images/main_character.png" alt="캐릭터" class="character">
+  <a href="/questions.html" class="btn btn-orange">
+    본캐 찾으러 GO!
+  </a>
+  <div class="btn btn-green btn-small share-or-copy">
+    주변에 알리기
+  </div>
+
+</body>
+
+</html>

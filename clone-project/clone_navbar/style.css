@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DynaPuff', cursive;
+}
+a, a:visited, a:link{
+    color: inherit;
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/*.navbar*/
+.navbar{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c5e1a5;
+}
+
+/*.navbar .navbar__logo*/
+.navbar .navbar__logo{
+    display: flex;
+    align-items: center;
+    margin: 8px 12px;
+}
+.navbar .navbar__logo i{
+    font-size: 50px;
+    color: #94af76;
+    margin: 10px;
+}
+.navbar .navbar__logo h1{
+    font-size:30px;
+    color: rgba(38, 37, 37, 0.7);
+}
+
+/*.navbar .navbar__menu*/
+.navbar .navbar__menu{
+    display: flex;
+}
+.navbar .navbar__menu li{
+    font-size: 18px;
+    color: rgba(38, 37, 37, 0.7);
+    padding: 10px;
+
+}.navbar .navbar__menu li:hover{
+    background-color: #94af76;
+    border-radius: 5px;
+}
+
+/*.navbar .navbar__icon*/
+.navbar .navbar__icon{
+    display: flex;
+    margin: 16px;
+}
+.navbar .navbar__icon li i{
+    font-size: 18px;
+    margin: 10px;
+    color: rgba(38, 37, 37, 0.7);
+
+}
+
+/*.navbar .navbar__toogleBtn*/
+.navbar .navbar__toogleBtn i{
+    font-size: 18px;
+    color: rgba(38, 37, 37, 0.7);
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: none;
+}
+
+/*media qeury*/
+@media (max-width:893px) {
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar .navbar__menu{
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    .navbar .navbar__menu li{
+        width: 98%;
+        text-align: center;
+    }
+    .navbar .navbar__icon{
+        display: none;
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .navbar .navbar__toogleBtn i{
+        display:inline;
+    }
+
+    .navbar .navbar__menu.active,
+    .navbar .navbar__icon.active{
+        display: flex;
+    }
+
+}
+

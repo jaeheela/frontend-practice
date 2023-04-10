@@ -1,0 +1,107 @@
+/* html에 적용된 기본 박스모델 reset처리 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ghost가 웹브라우저 정 중앙에 위치하도록  css설정 */
+body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    /* body 하위에 오는  .ghost는 무조건 웹브라우저를 기준으로 수평과 수직 방향에서 정 중앙에 위치하게 됨 */
+}
+
+.ghost{
+    animation-name: moveUpDown;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+    position: absolute;
+}
+
+@keyframes moveUpDown {
+    0% {
+        margin-top: 0px;
+    }
+    50% {
+        margin-top: -50px;
+    }
+    100% {
+        margin-top:0px;
+    }
+}
+
+.ghost .body {
+    width: 120px;
+    height: 160px;
+    background-color: white;
+    border-radius: 45% 45% 0% 0%;
+    /* border-top-left-radius */
+    /* border-top-right-radius */
+    position: relative;
+    /* [.body > .face] .face가 .body 안에서 absolute로 움직임 */
+}
+
+
+/* [부모인 .face]를 display:flex로 지정해 .eye 위치 재배열 */
+.ghost .body .face {
+    display: flex;
+    /* border: 1px solid red; */
+    /* 박스영역 안보여서 border 적용함 */
+    width: 70px;
+    justify-content: space-between;
+    position: absolute;
+    top: 40px;
+
+    /* 왼쪽으로 50% 이동 후 다시 오른쪽으로 남은 영역의 절반 만큼 이동함 */
+    left: 50%;
+    transform: translate(-50%);
+
+    /*[.eye + .eye + .mouse]>70px 적용해 .mouse 줄바꿈 적용 */
+    flex-wrap: wrap;
+
+}
+
+
+.ghost .body .face .eye {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background-color: rgb(29, 28, 28);
+
+}
+
+.ghost .body .face .mouse {
+    width: 33px;
+    height: 15px;
+    border-radius: 5px 5px 50% 50%;
+    background-color: rgb(29, 28, 28);
+    margin: 13px auto;
+}
+
+.ghost .bottom{
+    display: flex;
+}
+
+.ghost .bottom .leg{
+    width:24px;
+    height:15px;
+    background-color: white;
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+}
+/*  .ghost .bottom .leg 중 특별히 짝수번째에 추가로 적용되는 것들*/
+.ghost .bottom .leg:nth-of-type(2n){
+    background-color: black;
+    /* position:relative로 하고 위로 -6px만큼 부드럽게 깎아서 올라감 */
+    position: relative;
+    top:-6px;
+    border-radius: 50%;
+}
+
