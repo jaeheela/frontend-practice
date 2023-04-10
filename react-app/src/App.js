@@ -93,7 +93,9 @@ function App() {
   //"topics"로 작성하지 않고, {topics}로 작성하면 문자열이 아닌 변수 자체가 전달됨 - 즉 배열객체로 사용 가능
   return (
     <div>
-      <Header title="REACT"></Header>
+      <Header title="WEB" onChangeMode={function () {
+        alert('Header');
+      }}></Header>
       <Nav topics={topics}></Nav>
       <Article title="welcome" body="hello,WEB"></Article>
       <Article title="Hi" body="Hi,React"></Article>
