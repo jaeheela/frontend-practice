@@ -1,0 +1,74 @@
+<head>
+    <title>ToastCalendar</title>
+    <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" />
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script>
+    <script>
+        import 'tui-date-picker/dist/tui-date-picker.css';
+        import 'tui-time-picker/dist/tui-time-picker.css';
+    </script>
+
+    <!-- 레거시 브라우저용 번들 파일 가져오기 -->
+    <!-- <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script> -->
+
+    <!-- 모듈로 가져오기 -->
+    <!-- <script type="module" src="https://uicdn.toast.com/calendar/latest/toastui-calendar.mjs"></script> -->
+</head>
+
+<body>
+    <h1>Toast UI Calendar 사용법</h1>
+    <div id="calendar" style="height: 80%; margin: 0 auto;"></div>
+    <!-- CDN과 브라우저 환경에서 namespace -->
+    <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.ie11.min.js"></script>
+    <script>
+
+
+        const Calendar = tui.Calendar;
+
+        const container = document.getElementById('calendar');
+        const options = {
+            defaultView: 'month',
+            useFormPopup: true,
+            useDetailPopup: true,
+            usageStatistics: false,
+
+            /*
+            timezone: {
+                zones: [
+                    {
+                        timezoneName: 'Asia/Seoul',
+                        displayLabel: 'Seoul',
+                    },
+                    {
+                        timezoneName: 'Europe/London',
+                        displayLabel: 'London',
+                    },
+                ],
+            },
+            */
+            calendars: [
+                {
+                    id: 'cal1',
+                    name: '개인',
+                    backgroundColor: '#03bd9e',
+                },
+                {
+                    id: 'cal2',
+                    name: '직장',
+                    backgroundColor: '#00a9ff',
+                },
+            ],
+        };
+
+        const calendar = new Calendar(container, options);
+
+        // 생성된 인스턴스의 옵션을 setOptions 메서드로 변경하기
+        calendar.setOptions(
+            {
+            defaultView: 'month'
+        
+            }
+        );
+    </script>
+</body>
+
+</html>
