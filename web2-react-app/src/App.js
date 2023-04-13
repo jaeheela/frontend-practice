@@ -94,6 +94,7 @@ function Nav(props) {
   </nav>;
 }
 
+
 //state 객체
 //=> 역할 : 객체의 값이 변경되면 새로운 UI를 만들어 return 해줌
 //=> 컴포넌트를 만드는 내부자를 위한 데이타
@@ -106,6 +107,7 @@ function Article(props) {
     {props.body}
   </article>;
 }
+
 
 function App() {
 
