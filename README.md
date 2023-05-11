@@ -1,27 +1,14 @@
-# frontend-practice
+# clone-project
 
-[frontend-practice]
+## clone_youtube 
+- 참고 사이트 : https://www.youtube.com/watch?v=67stn7Pu7s4
+- 완성작 : https://output.jsbin.com/juxereyeye
 
-### web1
+## clone_navbar
+참고 사이트 : https://www.youtube.com/watch?v=X91jsJyZofw
 
-- 생활코딩 클론
+## clone_webpage
 
-### web2-javascript
+## clone_mbti
 
-- 생활코딩 클론
 
-### clone-project
-
-- html,css,js 연습
-
-### react-app
-
-- react.js 연습
-
-### ckeditor
-
-- editor 라이브러리
-
-### toastUI
-
-- calendar 라이브러리
