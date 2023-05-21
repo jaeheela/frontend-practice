@@ -1,2 +1,0 @@
-- 에디터에 적용되는 CSS 확인하기
-- https://ckeditor.com/docs/ckeditor5/latest/installation/advanced/content-styles.html
