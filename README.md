@@ -35,6 +35,10 @@
 ### ✅ web1
 <img width="1440" alt="image" src="https://github.com/jaeheela/frontend-practice/assets/107570140/18f2d51a-37fc-4986-945d-1d16ff1ccbd9">
 
+### ✅ web2
+<img width="1440" alt="image" src="https://github.com/jaeheela/frontend-practice/assets/107570140/0b4722fa-0fb4-46ef-8ebc-56797d01625a">
+<img width="1440" alt="image" src="https://github.com/jaeheela/frontend-practice/assets/107570140/11672018-5801-4732-8f57-5b717e8ef18a">
+
 ### ✅ webpage
 <img width="1440" alt="image" src="https://github.com/jaeheela/frontend-practice/assets/107570140/c7dc7edd-4c7e-4383-abc0-fa51e1ff03d0">
 
