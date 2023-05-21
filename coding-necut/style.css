@@ -1,0 +1,119 @@
+/* 이서윤체 폰트 적용을 위한 코드 */
+@font-face {
+    font-family: "LeeSeoyun";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: "LeeSeoyun";
+    margin: 0;
+    display: flex;
+    /* flexible하게 보여줄건데 */
+    justify-content: center;
+    /* 안에 내용물들을 가운데 정렬 해줘! */
+    background-image: url("./background.png");
+    background-repeat: no-repeat;
+}
+
+/* 메인 영역(div)에 대한 스타일링 */
+.container {
+    width: 390px;
+    background-color: #72b6c4;;
+    height: 100%;
+}
+
+/* 사진 영역 전체에 대한 스타일링 */
+.photos {
+    margin-top: 30px;
+}
+
+/* 사진영역 각각에 대한 스타일링 */
+.photo-frame {
+    background-color: white;
+    margin: 15px 20px;
+    height: 200px;
+    background-size: cover;
+
+    /* 이미지 설명 글을 가운데 아래로 내리기 위한 설정 1 */
+    /* 넌 .photo-description의 위치를 잡는 기준이 될거야! */
+    position: relative;
+
+    /* 마우스가 사진 위로 올라가면 포인터 아이콘으로 바뀌도록 */
+    cursor: pointer;
+}
+
+/* 이미지 설명 글 스타일링 */
+.photo-frame .photo-description {
+    color: white;
+    background-color: black;
+    /* 가로 너비는 내부 콘텐츠에 딱 맞게! */
+    width: fit-content;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    /* 경계선 */
+    border-radius: 10px;
+
+    /* 이미지 설명 글을 가운데 아래로 내리기 위한 설정 2 */
+    /* 넌 기준으로부터 아래(bottom)에서 0만큼 위로 올라와서 위치해! */
+    /* 가운데 정렬도 잊지마! → (trnasform과 left는 세트 메뉴) */
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%);
+    left: 50%;
+}
+
+/* 이미지 삽입하기 */
+#image1 {
+    background-image: url("./img1.png");
+    background-repeat: no-repeat;
+}
+
+#image2 {
+    background-image: url("./img2.png");
+    background-repeat: no-repeat;
+}
+
+#image3 {
+    background-image: url("./img3.png");
+    background-repeat: no-repeat;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+/* 하단 영역 스타일링 */
+.footer {
+    /* 아래 영역 전체는, flexible하게 하되 그 내부 아이템들은 세로로 쌓을거야 */
+    display: flex;
+    flex-direction: column;
+    /* 근데 모두 가운데 정렬 했으면 좋겠어! */
+    align-items: center;
+}
+
+.f-title {
+    font-size: 25px;
+    font-weight: 900;
+    color: white;
+}
+
+.f-date {
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+}
+
+
+
+.showText {
+    /* opacity : 투명도, opacity는 1에 가까워 질 수록 불투명하다. 즉 다 보인다. */
+    opacity: 1;
+    /* transition : 나타날 때 0.5초동안 천천히 나타나는 효과  */
+    transition: opacity 0.5s linear;
+}
+.hideText {
+    opacity: 0;
+}
