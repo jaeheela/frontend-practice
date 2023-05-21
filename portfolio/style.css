@@ -684,15 +684,15 @@ html{
 
 
 /*자바스크립트로 클래스를 추가하기 위한 기능 구현*/
-header.active {
-  background-color: rgba(0, 0, 0);
-  animation: fadeIn 0.7s ease-in-out;
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
+header.active{
+    background-color:rgba(0,0,0);
+    animation:fadeIn 0.5s ease-in-out;
   }
-  100% {
-    opacity: 1;
+  @keyframes fadeIn{
+    0%{
+      opacity:0;
+    }
+    100%{
+      opacity:1;
+    }
   }
-}
