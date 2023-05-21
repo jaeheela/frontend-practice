@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<!--
+lang 속성값이 zxx인 이유:
+zxx는 웹 페이지의 주 언어를 쉽게 파악할 수 없는 상황에서 
+HTML 적합성 검사를 통과해야 할 때 사용하는 값임
+왜 최종 프로젝트는 웹 페이지의 언어를 파악할 수 없을까? 
+최종 프로젝트에서는 임의의 텍스트를 작성하기 위해 Lorem ipsum(로렘 입숨)이라는
+텍스트 채우기 기능을 사용함
+이 기능으로 채워진 텍스트는 영어처럼 보이지만, 
+HTML 적합성 검사를 하면 주 언어를 설정하기 위한 국가별 코드를 적는 건 
+적절하지 않다는 오류가 나옴 그래서 국가별 코드가 아닌 zxx 값을 설정함
+나중에 텍스트를 적절한 언어로 다시 채워 넣은 뒤, 
+언제든지 국가 코드만 변경하고 다시 HTML 적합성 검사를 하면 됨
+-->
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    
+    <!--아이콘폰트적용하기[참고:6.9.2]-->
+    <!--Font Awesome 라이브러리를 CDN 참조 방식으로 추가 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- css 외부 스타일 시트 방법 사용-->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- javascrtipt 외부 파일 사용-->    
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    
+    <!--
+    의미에 맞는 적절한 태그 이용하기: 헤더영역 :<header>
+    웹페이지 내부의 다른 영역이나 외부를 연결하는 영역 : <nav>
+    메뉴의 순서가 중요 : <ol>
+    메뉴의 순서가 중요하지 않음 <ul>
+    각 메뉴가 내부의 다른 영역으로 연결되는 링크이지만, 자바스크립트 코드로 링크 이동을 제어할 예정이라서 <a> 대신 <button> 으로 작성
+    -->
+    <!--
+    핵심)
+    container 클래스가 있는 <div> 태그
+    <div>태그는 전체 프로젝트의 기준 너비(보통 1140px)를 유지하기 위한 래퍼(wrapper) 역할
+    -->
+    
+    <!--header-->
+    <header>
+        <div class="container">
+            <h1>
+                <button>JERI</button>
+            </h1>
+            <nav>
+                <ul>
+                    <li><button>About</button></li>
+                    <li><button>Features</button></li>
+                    <li><button>Portfolio</button></li>
+                    <li><button>Contact</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!--end header-->
+    
+    <!--
+    앞에서 작성한 <header>의 위치를  [position: absolute] 로 지정했기 때문에 화면에 고정되어 있는 상태임
+    그래서 실제로 다른 요소의 레이아웃에 간섭하지 않는 상태라는 것을 이해하고 진행함
+
+    [메인 영역]은 [웹 브라우저의 높이만큼 기본 높이를 지정]할 것임
+    그래야만 사용자가 어떤 크기의 웹 브라우저로 접속하더라도 화면을 가득 채우는 메인 영역을 볼 수 있음
+
+    메인 영역 안에 보이는 텍스트는 수평과 수직 방향에서 중앙에 있음
+    메인 영역은 시맨틱 태그인 <main>태그로 작성
+    main 태그 안에는 기준 너비를 유지하기 위한 container 클래스가 포함된 <div> 태그가 있음
+    <div> 태그 안에 여러 태그를 적절하게 사용해 코드 작성하기
+
+    - 최종 프로젝트에서 텍스트 : <h4>,<h2>,<p> 태그로 작성, 버튼은 <button>로 작성 
+	(<input>의 type="button" 폼에서 사용하는 버튼이 아니므로 <button>이 더 적절)
+    - 물론 다른 태그로 작성해도 상관없음, 태그 선택은 오로지 코드를 작성하는 사람의 주관적인 판단
+    -->
+    
+    <!--main-->
+    <main id="main">
+        <div class="container">
+            <h4>Welcome</h4>
+            <h2>I'M A <span></span></h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat ea, mollitia exercitationem, quibusdam
+                quas aliquid nobis natus quisquam quaerat expedita necessitatibus culpa illo. Voluptatibus, est
+                recusandae. Esse beatae nisi perspiciatis.</p>
+            <button class="download">DOWNLOAD CV</button>
+            <button class="mouse"><i class="fa-solid fa-computer-mouse"></i></button>
+        </div>
+    </main>
+    <!--end main-->
+	
+
+<!--
+최종 프로젝트 데모 페이지를 보면, 섹션 영역은 레이아웃이 모두 비슷함
+레이아웃의 구성 : [제목] + [본문]
+그래서 구조와 CSS를 잘 정의하면 중복된 부분은 최소한의 코드로 작성할 수 있음
+지금까지와 마찬가지로 먼저 해당 영역을 어떤 태그로 작성할지 생각해야함
+섹션 영역은 논리적으로 관련 있는 내용끼리 구분한 영역이므로 <section>태그 사용
+<section> 태그는 <h2> ~ <h6> 중 반드시 하나를 사용해야함
+그 외 각 구성 요소의 의미를 잘 생각하면서 적절한 태그로 작성하기
+<section>으로 섹션 영역을 모두 표시하지만, 
+세부 디자인은 조금씩 다르므로 각 영역을 구분할 수 있어야 함 
+-->	
+	
+    <!--start section1_About me-->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="title">
+                <h4>Who Am I</h4>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-self">
+                <div class="left">
+                    <img src="https://images.unsplash.com/photo-1583090758875-4dc2d02c6c12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="my favorite animal" width="500px">
+                </div>
+                <div class="right">
+                    <h3>Hello, <strong>I'm Jeri</strong></h3>
+                    <p>I'm Web publisher And Front-End Developer.</p>
+                    <div class="sentence">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore suscipit adipisci earum
+                            laboriosam perferendis, corporis quidem deleniti autem excepturi fugiat sequi
+                            exercitationem, ratione nisi, dolorem sed ipsa quia totam dicta.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore suscipit adipisci earum
+                            laboriosam perferendis, corporis quidem deleniti autem excepturi fugiat sequi
+                            exercitationem, ratione nisi, dolorem sed ipsa quia totam dicta.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore suscipit adipisci earum
+                            laboriosam perferendis, corporis quidem deleniti autem excepturi fugiat sequi
+                            exercitationem, ratione nisi, dolorem sed ipsa quia totam dicta.</p>
+                    </div>
+
+                    <div class="social">
+                        <a href="#">
+                            <i class="fa-brands fa-blogger-b"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-github-alt"></i>
+                        </a>
+                        <a href="#">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section1_About me-->
+	
+	
+	
+<!--
+What I Do 영역 : <section id="features" class="do">으로 지정해 구분
+기준 너비는 지금까지와 마찬가지로 <div class="container">
+
+<div class="title"> : 제목
+<div class="do-me"> : 본문
+	<div class="do-inner"> = <div class="icon"> + <div class="content">
+	<div class="do-inner"> = <div class="icon"> + <div class="content">
+	<div class="do-inner"> = <div class="icon"> + <div class="content">
+-->	
+	
+    <!--start section2_What I Do-->
+    <section id="features" class="do">
+        <div class="container">
+            <div class="title">
+                <h4>Features</h4>
+                <h2>What I Do</h2>
+            </div>
+            <div class="do-me">
+                <div class="do-inner">
+                    <div class="icon"><i class="fa-brands fa-html5"></i></div>
+                    <div class="content">
+                        <h3>HTML5</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit dolorum aut magnam cumque
+                            officia voluptate, quasi reprehenderit aperiam ad ipsam eaque adipisci ab vel incidunt
+                            distinctio quaerat culpa accusantium nam.</p>
+                    </div>
+                </div>
+                <div class="do-inner">
+                    <div class="icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="content">
+                        <h3>CSS3</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit dolorum aut magnam cumque
+                            officia voluptate, quasi reprehenderit aperiam ad ipsam eaque adipisci ab vel incidunt
+                            distinctio quaerat culpa accusantium nam.</p>
+                    </div>
+                </div>
+                <div class="do-inner">
+                    <div class="icon"><i class="fa-brands fa-bootstrap"></i></div>
+                    <div class="content">
+                        <h3>BootStrap v5.0</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit dolorum aut magnam cumque
+                            officia voluptate, quasi reprehenderit aperiam ad ipsam eaque adipisci ab vel incidunt
+                            distinctio quaerat culpa accusantium nam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section2_What I Do-->
+	
+	
+	
+<!--
+배경 영역에 <section>태그를 사용하지 않는 이유?
+<section>태그는 항상 내부에 <h1>~<h6> 중 1개 이상 사용을 권장
+그러나 배경 영역은 아무런 정보를 전하지 않는 단순한 디자인적 요소 이므로
+h태그 필요가 없음
+그래서 <div>태그 사용함
+--> 	
+	
+    <!--start background-->
+    <div class="bg"></div>
+    <!--end background-->
+	
+	
+	
+
+<!--
+PortFolio 영역 : <section id="portfolio" class="portfolio">로 지정해 구분
+기준 너비는 지금까지와 마찬가지로 <div class="container">
+
+<div class="title"> : 제목
+<div class="portfolio-me"> : 본문
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3>
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3> 
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3> 
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3> 
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3> 
+	<div class="portfolio-inner"> = <img> + <strong></strong> + <h3></h3> 
+-->	
+	
+    <!--start section4_PortFolio-->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="title">
+                <h4>PORTFOLIOBACK</h4>
+                <h2>PortFolio</h2>
+            </div>
+            <div class="portfolio-me">
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1472491235688-bdc81a63246e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2F0JTIwZmFjZWJvb2t8ZW58MHx8MHx8&auto=format&fit=crop&w=1400&q=60"
+                        alt="Package Design" width="500px" height="300px">
+                    <strong>BRANDING</strong>
+                    <h3>Package Design</h3>
+                </div>
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1392&q=80"
+                        alt="Web Dev" width="500px" height="300px">
+                    <strong>DEVELOPMENT</strong>
+                    <h3>Web Dev</h3>
+                </div>
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1611267254323-4db7b39c732c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=686&q=80"
+                        alt="cute cat" width="500px" height="300px">
+                    <strong>MARKETING</strong>
+                    <h3>Cute Cat</h3>
+                </div>
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="Facebook clone" width="500px" height="300px">
+                    <strong>WEB</strong>
+                    <h3>Facebook clone</h3>
+                </div>
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1570562457207-9c0c00274740?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                        alt="Netflix clone" width="500px" height="300px">
+                    <strong>WEB</strong>
+                    <h3>Netflix clone</h3>
+                </div>
+                <div class="portfolio-inner">
+                    <img src="https://images.unsplash.com/photo-1509628061459-1328d06c2ced?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1506&q=80"
+                        alt="Airbnb clone" width="500px" height="300px">
+                    <strong>WEB</strong>
+                    <h3>Airbnb clone</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section4_PortFolio-->
+
+	
+	
+<!--
+tip) 자동완성기능끄기 <input type="" autocomplete="off">
+-->	
+	
+    <!--start section5_Contact With Me-->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="title">
+                <h4>CONTACT</h4>
+                <h2>Contact With Me</h2>
+            </div>
+            <div class="contact-me">
+                <!--phone, email, address-->
+                <div class="left">
+                    <div class="card">
+                        <div class="icon"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="info-text">
+                            <h3>phone</h3>
+                            <p>010-1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="info-text">
+                            <h3>email</h3>
+                            <p>jhla456@kakao.com</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+                        <div class="info-text">
+                            <h3>address</h3>
+                            <p>samsung-ro gangnam-gu, Seoul, Republic of korea
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--입력양식폼: name, email, massage-->
+                <div class="right">
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="name">name</label>
+                            <input type="text" name="name" id="name" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">email</label>
+                            <input type="email" name="email" id="email" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="msg">message</label>
+                            <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+                        </div>
+                        <button type="submit">send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end section5_Contact With Me-->
+</body>
+
+</html>
